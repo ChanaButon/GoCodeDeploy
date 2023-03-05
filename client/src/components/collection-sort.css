@@ -1,0 +1,11 @@
+.collection-sort {
+    display: flex;
+    flex-direction: column;
+    width: 13rem;
+    
+  }
+  
+  .collection-sort:first-child {
+    padding-right: 20px;
+  }
+  

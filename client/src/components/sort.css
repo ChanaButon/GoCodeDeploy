@@ -1,0 +1,12 @@
+
+
+.sort {
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-between;
+  }
+  
+  .sort {
+    align-self: flex-start;
+  }
+  
