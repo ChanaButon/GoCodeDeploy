@@ -5,8 +5,11 @@ import App from './App';
 import NotFoundPage from './components/NotFoundPage';
 import ProductPage from './components/ProductPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CartList from './components/cartList';
+import CartList from './components/CartList';
 import Admin from './components/Admin'
+import LoginForm from './components/LoginForm';
+import AboutPage from './components/About';
+import Contact from './components/Contact';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,6 +20,9 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} /> 
         <Route path="/admin" element={<Admin />}/>
+        <Route path="loginform" element={<LoginForm />}/>
+        <Route path="/contact" element={<Contact />}/>
+        <Route path="about" element={<AboutPage />}/>
         <Route path="products/:productId" element={<ProductPage />} />
         <Route path="admin/products/:productId" element={<ProductPage />} />
         <Route  path="/cartList" element={<CartList />} />

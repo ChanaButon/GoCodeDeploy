@@ -6,7 +6,8 @@ import './product-info.css'
 import { IoAdd } from 'react-icons/io5';
 import { IoMdRemove } from 'react-icons/io';
 import MyContext from "../MyContext";
-import "./CartShopping"
+import "./Cartshopping.css"
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -15,8 +16,11 @@ import "./CartShopping"
 
 
 const Cartshopping=()=>{
+  const navigate = useNavigate();
   const {setproductsBuy,productsBuy}=useContext(MyContext) 
-
+  const handleClick = () => {
+    navigate('/cartList', { state: { productsBuy } });
+  };
   const addProduct =(id)=>{
     if(id){
       const updateList=(productsBuy&&productsBuy.map((product)=>{
@@ -96,9 +100,9 @@ const Cartshopping=()=>{
           )}
       </div>
        <div className="cart-summary">
-                  
        <div className="total-price">Total: {total} USD</div>
-       <button className="checkout-button">Checkout</button>
+       <button className="checkout-button" onClick={handleClick}>Checkout</button>
+       
       
        </div>
        

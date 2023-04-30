@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./ProductPage.css"
 
 const ProductPage = () => {
   const [chosenProduct, setChosenProduct] = useState({});
@@ -21,15 +22,16 @@ const ProductPage = () => {
 
   console.log(chosenProduct);
   return (
-    <div>
+    <div className="productItem">
       {chosenProduct && <div>
-        <p>{chosenProduct.title}</p>
-        <p>{chosenProduct.description}</p>
-        <p>{chosenProduct.price}</p>
-        <p>{chosenProduct.category}</p>
-        {/* <p>{chosenProduct.rating.rate}</p>
-        <p>{chosenProduct.rating.count}</p> */}
-        <img alt="product" src={chosenProduct.image} />
+        
+        <img alt="productImg" src={chosenProduct.image} />
+        <p className="Ptitle"><strong>Title:</strong> {chosenProduct.title}</p>
+        <p className="Pdescription"><strong>Description:</strong> {chosenProduct.description}</p>
+        <p className="Pcategory"><strong>Category:</strong> {chosenProduct.category}</p>
+        <p className="Pprice"><strong>Price:</strong> {chosenProduct.price}</p>
+        
+        
       </div>}
     </div>
   );

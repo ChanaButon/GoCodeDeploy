@@ -2,7 +2,7 @@ import React, { useEffect ,useState} from "react";
 import { useParams, Link } from "react-router-dom";
 import {useTable} from "react-table"
 import { useNavigate  } from "react-router-dom";
-
+import { AiFillCloseCircle } from 'react-icons/ai';
 
  import "./Admin.css"
 const Admin= () => {
@@ -13,15 +13,7 @@ const Admin= () => {
  
   const navigate = useNavigate()
   
-  // const[addFromdata,setaddFromdata]=React.useState({
-  //   title:'',
-  //   image:'',
-  //   category:'',
-  //   description:'',
-  //   price:'',
-
-
-  // })
+  
   
   useEffect(()=>{
     fetch("http://localhost:8000/api/products")
@@ -104,6 +96,12 @@ const Admin= () => {
     })
     .catch(error => console.error(error));
   };
+
+  const closeButtonStyle = {
+    position: 'fixed',
+    top: '0',
+    left: '0',
+  };
   
   
   
@@ -111,7 +109,9 @@ const Admin= () => {
   return(
    <div className="Admin">
        <h1>ADMIN PAGE</h1>
-       <Link to="/">go back to page</Link>
+       <div style={closeButtonStyle}>
+      <AiFillCloseCircle fontSize={30} color='red'  onClick={()=>{navigate(`/`)}} />
+      </div>
       <div className="AdminTable">
        <table>
          <thead>

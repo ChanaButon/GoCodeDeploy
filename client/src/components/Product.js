@@ -82,7 +82,7 @@ import { useNavigate  } from "react-router-dom";
     </div>
     <div className="product-info">
       <h5>{title}</h5>
-      <h6>{price}$</h6>
+      <h6>{price}</h6>
       <BsCartDash color="red" frontsize={100} onClick={removeByProduc} size={30} />
       
       <MdOutlineAddShoppingCart color="green" frontsize={100} onClick={addByProduct} size={30}/>

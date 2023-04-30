@@ -1,0 +1,28 @@
+.productItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.Ptitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.Pdescription {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.Pcategory {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.Pprice {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}

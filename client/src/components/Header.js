@@ -6,12 +6,12 @@ const Header = () => {
   return (
     <header className="Header">
       <TemporaryDrawer />
-      <div className="Logo">sport</div>
+      <h1 className="Logo">Online Sports Store</h1>
       <nav className="Navigation">
         <a href="">Home</a>
-        <a href="s#">About</a>
-        <a href="#">Contact</a>
-        <a href="/admin">Server</a>
+        <a href="about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/loginform">Server</a>
       </nav>
     </header>
   );

@@ -1,30 +1,20 @@
 import * as React from 'react';
-import { useNavigate } from "react-router-dom";
+
 import { useContext } from 'react';
 import MyContext from '../MyContext';
-
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-// import List from '@mui/material/List';
-// import Divider from '@mui/material/Divider';
-// import ListItem from '@mui/material/ListItem';
-// import ListItemButton from '@mui/material/ListItemButton';
-// import ListItemIcon from '@mui/material/ListItemIcon';
-// import ListItemText from '@mui/material/ListItemText';
-// import InboxIcon from '@mui/icons-material/MoveToInbox';
-// import MailIcon from '@mui/icons-material/Mail';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import Cartshopping from './CartShopping';
 import {GrCart} from 'react-icons/gr';
 
 
+
 export default function TemporaryDrawer() {
-  const navigate = useNavigate();
+  
   const { productsBuy } = useContext(MyContext);
-  const handleClick = () => {
-    navigate('/cartList', { state: { productsBuy } });
-  };
+  
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -41,13 +31,17 @@ export default function TemporaryDrawer() {
   };
 
   
-
+  const totalProducts = productsBuy.reduce((total, product) => {
+    return total + product.countProduct;
+  }, 0);
 
   return (
     <div>
       {['right'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}> <GrCart  size={50}/></Button>
+          <Button onClick={toggleDrawer(anchor, true)}> <GrCart  size={50}/>
+          {totalProducts > 0 && <span className="count">{totalProducts}</span>}
+          </Button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
@@ -57,7 +51,8 @@ export default function TemporaryDrawer() {
               <div>
                 <AiFillCloseCircle  color='red' size={30} onClick={toggleDrawer(anchor, false)}/>
                 <Cartshopping/>
-                <Button onClick={handleClick}>Open Cart</Button>
+               
+                
                 </div>}
           </Drawer>
         </React.Fragment>
