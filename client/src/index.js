@@ -10,7 +10,7 @@ import Admin from './components/Admin';
 import LoginForm from './components/LoginForm';
 import AboutPage from './components/About';
 import Contact from './components/Contact';
-import CartList from './components/CartList';
+import CartList from './components/CartList.js';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
