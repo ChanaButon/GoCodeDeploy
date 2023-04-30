@@ -6,8 +6,9 @@ import './product-info.css'
 import { IoAdd } from 'react-icons/io5';
 import { IoMdRemove } from 'react-icons/io';
 import MyContext from "../MyContext";
-import "./Cartshopping.css"
+import "./Cartshopping.css";
 import { useNavigate } from "react-router-dom";
+
 
 
 
