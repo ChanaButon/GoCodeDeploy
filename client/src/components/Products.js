@@ -14,8 +14,8 @@ const Products = () => {
         // const RandomNumber = Math.floor(Math.random()*1000000 + i)
         return(
         <Product
-          key={product.id}
-          id={product.id}
+          key={product._id}
+          id={product._id}
           imgUrl={product.image}
           title={product.title}
           price={product.price}

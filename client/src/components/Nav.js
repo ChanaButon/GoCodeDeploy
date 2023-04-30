@@ -5,7 +5,7 @@ import Clock from "./Clock"
 const Nav = () => {
     return(
       <nav className="product-filter">
-        <h1>Products</h1> 
+        {/* <h1>Products</h1>  */}
         <Sort/>
         <Clock/>
         </nav>

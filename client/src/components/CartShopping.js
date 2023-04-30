@@ -6,7 +6,11 @@ import './product-info.css'
 import { IoAdd } from 'react-icons/io5';
 import { IoMdRemove } from 'react-icons/io';
 import MyContext from "../MyContext";
-import "./Cartshopping.css"
+import "./CartShopping"
+
+
+
+
 
 
 
@@ -16,7 +20,7 @@ const Cartshopping=()=>{
   const addProduct =(id)=>{
     if(id){
       const updateList=(productsBuy&&productsBuy.map((product)=>{
-        if(product.id===id){
+        if(product._id===id){
           product.countProduct=product.countProduct+1
           return product
         }
@@ -33,7 +37,7 @@ const Cartshopping=()=>{
    const removeProduct=(id)=>{
     if(id){
       const updateList=(productsBuy&&productsBuy.map((product)=>{
-        if(product.id===id){
+        if(product._id===id){
           product.countProduct=product.countProduct-1
           if(product.countProduct!==0){
             return product
@@ -60,12 +64,15 @@ const Cartshopping=()=>{
     }
   }, 0);
   
+  
+  
+
    return (
     <div className="cart-container">
       <div className="cart-items">
         {productsBuy &&
           productsBuy.map((product) => (
-              <div className="cart-item" key={product.id}>
+              <div className="cart-item" key={product._id}>
                 <div className="product-image">
                   <img src={product.image} alt={product.title} />
                 </div>
@@ -73,10 +80,13 @@ const Cartshopping=()=>{
                   <h5 className="product-title">{product.title}</h5>
                   <div className="product-price">{product.price} USD</div>
                   <div className="product-quantity">
-                    <IoMdRemove  onClick={() => removeProduct(product.id)}/>
+                    <IoMdRemove  onClick={() => removeProduct(product._id)}/>
                     <span >{product.countProduct}</span>
-                    <IoAdd onClick={() => addProduct(product.id)}/>
-                    {/* <GiTrashCan color="red" fontSize={20} onClick={()=>remove(product.id)}/> */}
+                    <IoAdd onClick={() => addProduct(product._id)}/>
+                    {/* <GiTrashCan color="red" fontSize={20} onClick={()=>remove(product._id)}/> */}
+                    
+                 
+
                   </div>
                 </div>
                 </div>
@@ -88,7 +98,9 @@ const Cartshopping=()=>{
        <div className="cart-summary">
                   
        <div className="total-price">Total: {total} USD</div>
-       <button className="checkout-button">Checkout</button></div>
+       <button className="checkout-button">Checkout</button>
+      
+       </div>
        
    </div>
 

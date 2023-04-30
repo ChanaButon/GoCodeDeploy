@@ -1,0 +1,27 @@
+Header {
+    background-color: #f5f5f5;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .Logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .Navigation {
+    display: flex;
+  }
+  
+  .Navigation a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .Navigation a:hover {
+    color: #555;
+  }

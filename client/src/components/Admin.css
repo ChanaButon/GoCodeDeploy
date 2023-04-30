@@ -1,0 +1,136 @@
+.Admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.AdminTable {
+  margin-top: 50px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f9f9f9;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+thead {
+  background-color: #333;
+  color: #fff;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px;
+  font-size: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+button[type="submit"],
+button {
+  background-color: #00ff51;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"]:hover,
+button:hover {
+  background-color: #0056b3;
+}
+
+button[type="submit"]:disabled,
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.Estey {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+AdminTable,
+.EsteyTable {
+  overflow-x: auto;
+}
+
+.EsteyTable {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.EsteyTable th,
+.EsteyTable td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.EsteyTable th {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+}
+
+.EsteyTable td {
+  text-align: left;
+}
+
+.EsteyTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.EsteyTable tr:hover {
+  background-color: #ddd;
+}
+
+.EsteyButton {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.EsteyButton:hover {
+  background-color: #0056b3;
+}
+
+.EsteyButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

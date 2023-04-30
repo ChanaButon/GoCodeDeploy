@@ -1,4 +1,8 @@
 import * as React from 'react';
+import { useNavigate } from "react-router-dom";
+import { useContext } from 'react';
+import MyContext from '../MyContext';
+
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -16,6 +20,11 @@ import {GrCart} from 'react-icons/gr';
 
 
 export default function TemporaryDrawer() {
+  const navigate = useNavigate();
+  const { productsBuy } = useContext(MyContext);
+  const handleClick = () => {
+    navigate('/cartList', { state: { productsBuy } });
+  };
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -38,7 +47,7 @@ export default function TemporaryDrawer() {
     <div>
       {['right'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}> <GrCart/></Button>
+          <Button onClick={toggleDrawer(anchor, true)}> <GrCart  size={50}/></Button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
@@ -47,8 +56,8 @@ export default function TemporaryDrawer() {
           {
               <div>
                 <AiFillCloseCircle  color='red' size={30} onClick={toggleDrawer(anchor, false)}/>
-                
                 <Cartshopping/>
+                <Button onClick={handleClick}>Open Cart</Button>
                 </div>}
           </Drawer>
         </React.Fragment>

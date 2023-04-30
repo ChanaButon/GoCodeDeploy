@@ -19,17 +19,21 @@ import { useNavigate  } from "react-router-dom";
     const addByProduct=()=>{
       if(id!==''){
         productsData.filter((element)=>{
-          if(element.id === id)
+          console.log(id)
+          console.log(element._id)
+          if(element._id === id)
           {
-            if(!productsBuy.some(element=>element.id===id)){
-              setproductsBuy([{"id":element.id,"title":element.title,"price":element.price,"description":element.description,
+            console.log("hi")
+            if(!productsBuy.some(element=>element._id===id)){
+              setproductsBuy([{"_id":element._id,"title":element.title,"price":element.price,"description":element.description,
               "category":element.category,"image":element.image,"rating":element.rating,countProduct:1},...productsBuy])
             }
             else{
               setproductsBuy(productsBuy.filter((element)=>{
-                if(element.id===id){
+                if(element._id===id){
                   element.countProduct=element.countProduct+1
                   return element
+                  
                 }
                 else{
                   return element
@@ -43,13 +47,14 @@ import { useNavigate  } from "react-router-dom";
         })
       }
       console.log(productsBuy)
+      alert('add successful!');
   
     } 
     const removeByProduc=()=>{
-      const listBuy=[]
+      // const listBuy=[]
       if(id!==''){
         setproductsBuy(productsBuy&&productsBuy.filter((element)=>{
-          if(element.id !== id){
+          if(element._id !== id){
             return element
           }
           else{
@@ -78,8 +83,9 @@ import { useNavigate  } from "react-router-dom";
     <div className="product-info">
       <h5>{title}</h5>
       <h6>{price}$</h6>
-      <BsCartDash color="red" frontsize={100} onClick={removeByProduc}/>
-      <MdOutlineAddShoppingCart color="green" frontsize={100} onClick={addByProduct}/>
+      <BsCartDash color="red" frontsize={100} onClick={removeByProduc} size={30} />
+      
+      <MdOutlineAddShoppingCart color="green" frontsize={100} onClick={addByProduct} size={30}/>
 
      
     </div>
