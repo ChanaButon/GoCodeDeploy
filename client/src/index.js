@@ -5,11 +5,12 @@ import App from './App';
 import NotFoundPage from './components/NotFoundPage';
 import ProductPage from './components/ProductPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CartList from './components/CartList';
-import Admin from './components/Admin'
+
+import Admin from './components/Admin';
 import LoginForm from './components/LoginForm';
 import AboutPage from './components/About';
 import Contact from './components/Contact';
+import CartList from './components/CartList';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
