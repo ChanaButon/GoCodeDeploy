@@ -21,9 +21,9 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} /> 
         <Route path="/admin" element={<Admin />}/>
-        <Route path="https://novgocodeprojectdeployed-v0n9.onrender.com/loginform" element={<LoginForm />}/>
-        <Route path="https://novgocodeprojectdeployed-v0n9.onrender.com/contact" element={<Contact />}/>
-        <Route path="https://novgocodeprojectdeployed-v0n9.onrender.com/about" element={<AboutPage />}/>
+        <Route path="/loginform" element={<LoginForm />}/>
+        <Route path="/contact" element={<Contact />}/>
+        <Route path="/about" element={<AboutPage />}/>
         <Route path="products/:productId" element={<ProductPage />} />
         <Route path="admin/products/:productId" element={<ProductPage />} />
         <Route  path="/cartList" element={<CartList />} />
