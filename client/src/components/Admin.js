@@ -79,7 +79,7 @@ const Admin= () => {
   };
 
   const handleAdd =(event)=>{
-    event.preventDefulte();
+    event.preventDefault();
     console.log(formData)
     fetch(`https://novgocodeprojectdeployed-v0n9.onrender.com/api/addProduct`,{
       method: 'POST',
@@ -93,7 +93,6 @@ const Admin= () => {
       console.log(data);
       setupdateProduct(-1);
       setFormData([]);
-      // You can also refresh the products list here if you want to show the updated product immediately
     })
     .catch(error => console.error(error));
   };
@@ -178,7 +177,7 @@ const Admin= () => {
         <input type="text" name="category" required="required" placeholder="enter  a category" onChange={handleInput}/>
         <input type="text" name="description" required="required" placeholder="enter  a description"onChange={handleInput}/>
         <input type="text" name="price" required="required" placeholder="enter  a price"onChange={handleInput}/>
-        <button type="submit" onClick={()=>handleAdd()}>add</button>
+        <button type="submit" onClick={handleAdd}>add</button>
    
        </form>
    </div>
