@@ -78,7 +78,8 @@ const Admin= () => {
     .catch(error => console.error(error));
   };
 
-  const handleAdd =()=>{
+  const handleAdd =(event)=>{
+    event.preventDefulte();
     console.log(formData)
     fetch(`https://novgocodeprojectdeployed-v0n9.onrender.com/api/addProduct`,{
       method: 'POST',
