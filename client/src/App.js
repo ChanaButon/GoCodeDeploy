@@ -13,10 +13,10 @@ import LoginForm from './components/LoginForm';
 
 function App() {
 
-  
+  //https://novgocodeprojectdeployed-v0n9.onrender.com/
   //const [productAdd,setproductAdd]= useState("")
   const getAllProducts = async () => {
-    const response = await fetch('http://localhost:8000/api/products');
+    const response = await fetch('https://novgocodeprojectdeployed-v0n9.onrender.com/api/products');
     const data = await response.json();
     setProductsData(data);
     setproductsCopy(data);

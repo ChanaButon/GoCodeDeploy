@@ -9,7 +9,7 @@ const ProductPage = () => {
   const fetchSingleProduct = async () => {
     console.log(productId)
     const response = await fetch(
-      `http://localhost:8000/api/productId/${productId}`
+      `https://novgocodeprojectdeployed-v0n9.onrender.com/api/productId/${productId}`
     );
     const data = await response.json();
     setChosenProduct(data);

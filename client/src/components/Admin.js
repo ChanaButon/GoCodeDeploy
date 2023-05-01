@@ -16,7 +16,7 @@ const Admin= () => {
   
   
   useEffect(()=>{
-    fetch("http://localhost:8000/api/products")
+    fetch("https://novgocodeprojectdeployed-v0n9.onrender.com/api/products")
     .then(response=>response.json())
     .then(data =>{
       setProducts(data);
@@ -24,7 +24,7 @@ const Admin= () => {
     })
   })
   const deleteProduct = (id)=>{
-    fetch(`http://localhost:8000/api/deleteProduct/${id}`,{
+    fetch(`https://novgocodeprojectdeployed-v0n9.onrender.com/api/deleteProduct/${id}`,{
       method:'DELETE'
     }).then((result)=>{
       result.json().then((resp)=>{
@@ -37,7 +37,7 @@ const Admin= () => {
   //   setupdateProduct(id)
   // }
   const handleEdit =(id)=>{
-    fetch(`http://localhost:8000/api/productId/${id}`)
+    fetch(`https://novgocodeprojectdeployed-v0n9.onrender.com/api/productId/${id}`)
     .then(response => response.json())
     .then(product => {
       // Set the addFormData state to the existing product values
@@ -61,7 +61,7 @@ const Admin= () => {
   }
   
   const handleUpdate = (event) => {
-    fetch(`http://localhost:8000/api/updateProduct/${updateProduct}`, {
+    fetch(`https://novgocodeprojectdeployed-v0n9.onrender.com/api/updateProduct/${updateProduct}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ const Admin= () => {
 
   const handleAdd =()=>{
     console.log(formData)
-    fetch(`http://localhost:8000/api/addProduct`,{
+    fetch(`https://novgocodeprojectdeployed-v0n9.onrender.com/api/addProduct`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
